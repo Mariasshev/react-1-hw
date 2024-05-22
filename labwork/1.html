@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>LabWork 1</title>
+    <style>
+        .border
+        {
+            border: 2px solid blue;
+            padding: 50px;
+            font-size: 18px;
+            width: 200px;
+        }
+        .mainText
+        {
+            color: blue;
+            fontfamily: "Montserrat", sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div id="about-me"></div>
+    <div id="about-city"></div>
+    <!-- crossorigin для  работы с кроссбраузерными запросами -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+    <!-- для компиляции кода нам необходим компилятор Babel, который позволяет скомпилировать приложение при запуске в браузере -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+      
+   <!-- атрибут text/babel указывает, что данный код должен обрабатываться выше подключенным компилятором Babel. -->
+   <script type="text/babel">
+    //class
+    const mainText = "mainText";
+    const border = "border";
+
+    const user = {
+        age: 18,
+        firstName: 'Maria',
+        lastName: 'Shevchenko',
+        phoneNumber: '+380986375646',
+        getFullName: function(){ 
+            return `${this.firstName} ${this.lastName}`;
+        }
+    };
+    
+    const rootNode = document.getElementById("about-me");    // элемент для рендеринга приложения React
+    // получаем корневой элемент 
+    const root = ReactDOM.createRoot(rootNode);
+    // рендеринг в корневой элемент
+    root.render(
+        <div className={border}>
+            <h1>User Info: </h1> 
+            <p><span className={mainText}>FIO: </span> {user.getFullName()}</p>
+            <p><span className={mainText}>Age: </span> {user.age}</p>
+            <p><span className={mainText}>Phone: </span> {user.phoneNumber}</p>
+        </div>
+     );
+
+   </script>
+</body>
+</html>

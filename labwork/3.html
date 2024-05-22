@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>LabWork 3</title>
+    <style>
+
+        .mainText
+        {
+            color: black;
+            font-weight: 600;
+            fontfamily: "Montserrat", sans-serif;
+            font-size: 22px;
+        }
+        img{
+            height: 400px;
+            padding: 20px;
+        }
+        p
+        {
+            font-size: 20px;
+        }
+        .w-50
+        {
+            width: 50%;
+        }
+        .container
+        {
+            padding: 0 40px;
+        }
+        h1
+        {
+            padding-top: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="cooking"></div>
+    <!-- crossorigin для  работы с кроссбраузерными запросами -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+    <!-- для компиляции кода нам необходим компилятор Babel, который позволяет скомпилировать приложение при запуске в браузере -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+      
+   <!-- атрибут text/babel указывает, что данный код должен обрабатываться выше подключенным компилятором Babel. -->
+   <script type="text/babel">
+    //class
+    const mainText = "mainText";
+    const w_50 = "w-50";
+    const container = "container";
+
+    const ingradients = {
+        water: "150 мл",
+        sugar: '1 ст. л.',
+        olive_oil: "70 мл",
+        tomatoes: '1 шт',
+        meat: '150 г',
+        dry_yeast: '1 ч. л.',
+        salt: '0,5 ч. л.',
+        flour: "1,5-2 стакана",
+        cheese: '100 г',
+        images: [
+            "assets/img/pizza/1.webp",
+            "assets/img/pizza/2.webp"
+        ]
+
+    };
+    
+    const rootNode = document.getElementById("cooking"); 
+    // получаем корневой элемент 
+    const root = ReactDOM.createRoot(rootNode);
+    // рендеринг в корневой элемент
+    root.render(
+        <div className={container}>
+            <h1>Ингредиенты</h1> 
+            <hr></hr>
+
+            <p><span className={mainText}>Вода.................</span>{ingradients.water}</p>
+            <p><span className={mainText}>Сухие дрожжи.................</span>{ingradients.dry_yeast}</p>
+            <p><span className={mainText}>Сахар.................</span>{ingradients.sugar}</p>
+            <p><span className={mainText}>Растительное масло.................</span>{ingradients.olive_oil}</p>
+            <p><span className={mainText}>Соль.................</span>{ingradients.salt}</p>
+            <p><span className={mainText}>Пшеничная мука.................</span>{ingradients.flour}</p>
+            <p><span className={mainText}>Сыр твердый.................</span>{ingradients.cheese}</p>
+            <p><span className={mainText}>Помидоры.................</span>{ingradients.tomatoes}</p>
+            <p><span className={mainText}>Мясо.................</span>{ingradients.meat}</p>
+
+
+            <h1>Приготовление</h1> 
+            <hr></hr>
+
+            <h2>1</h2>
+            <p className={w_50}>
+                Сначала в глубокую тарелку отправляем теплую воду. Всыпаем сюда соль, сахар, а также сухие дрожжи. Все тщательно перемешиваем, накрываем пищевой пленкой и отставляем в теплое место на 15 минут.
+            </p>
+
+            <h2>2</h2>
+            <p className={w_50}>
+                Через указанное время в дрожжевую основу вливаем растительное масло. Тщательно все перемешиваем.            
+            </p>
+
+            <h2>3</h2>
+            <p className={w_50}>
+                Теперь сюда всыпаем просеянную пшеничную муку. Замешиваем однородное тесто. Накрываем его пищевой пленкой и ставим в теплое место на 40 минут.         
+            </p>
+
+            <h2>4</h2>
+            <p className={w_50}>
+                Далее нам понадобится формочка для пиццы. Смазываем ее растительным маслом. Также смазываем руки и отправляем в форму тесто. Растягиваем его таким образом, чтобы сформировать основу для пиццы. Тесто должно покрыть всю формочку            
+            </p>
+
+            <h2>5</h2>
+            <p className={w_50}>
+                После этого на тесто отправляем кетчуп и майонез. Распределяем соус по всей поверхности теста.
+            </p>
+            
+            <h2>6</h2>
+            <p className={w_50}>
+                Подготовим компоненты для начинки. В частности, моем и обсушиваем помидор. Нарезаем его на тоненькие полукружочки. Также на этом этапе нарезаем любую колбасу.
+            </p>
+
+            <h2>7</h2>
+            <p className={w_50}>
+                Сладкий перец моем, удаляем плодоножку, чистим от семян и нарезаем на небольшие полоски.            
+            </p>
+
+            <h2>8</h2>
+            <p className={w_50}>
+                На следующем этапе на пиццу отправляем колбасу и овощи. Равномерно распределяем начинку по всей поверхности теста.            
+            </p>
+
+            
+            <h2>9</h2>
+            <p className={w_50}>
+                Теперь натираем на крупной терке сыр. Посыпаем ним все компоненты. По желанию на сыр отправляем измельченную зелень. Отправляем пиццу в разогретую до 180 градусов духовку на 25 минут.  
+            </p>
+
+            <h2>10</h2>
+            <p className={w_50}>
+                Через указанное время пицца готова. Приятного аппетита.
+            </p>
+
+            <p><span className={mainText}> </span> 
+            {ingradients.images.map((image, index) => (
+                <img key={index} src={image} />
+            ))}
+        </p>
+        </div>
+     );
+
+   </script>
+</body>
+</html>
